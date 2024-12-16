@@ -86,9 +86,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Trufflehog
-        run: pip install trufflehog
-
-      - name: Run Secrets scan
-        run: trufflehog git --json ./ 
+      - name: Secret Scanning
+        uses: trufflesecurity/trufflehog@main
+        with:
+          extra_args: --results=verified,unknown
       
