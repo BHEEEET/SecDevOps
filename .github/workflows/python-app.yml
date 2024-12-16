@@ -80,3 +80,15 @@ jobs:
 
       - name: Run safety check
         run: safety check
+  secrets_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Trufflehog
+        run: pip install trufflehog
+
+      - name: Run Secrets scan
+        run: trufflehog filesystem --path . --json
+      
