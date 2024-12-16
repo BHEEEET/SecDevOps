@@ -61,10 +61,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest
-      - name: Build CodeQL Database
-        run: |
-          mkdir -p /tmp/codeql-database
-          codeql database create /tmp/codeql-database --language=python --source-root=.
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
