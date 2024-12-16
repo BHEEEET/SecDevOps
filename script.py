@@ -13,3 +13,6 @@ eval(user_input)  # Dit moet gedetecteerd worden door CodeQL.
  
 api_key = "sk_test_51H3UjbvK4jLopL3yDe0g7G0asf"
 password = "SuperSecret123"
+
+
+test_server = 'http://user:password@192.168.0.1:3128'
