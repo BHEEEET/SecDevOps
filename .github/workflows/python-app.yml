@@ -10,7 +10,9 @@ on:
     branches: [ "master", "dev" ]
 
 permissions:
+  actions: read
   contents: read
+  security-events: write
 
 jobs:
   build:
