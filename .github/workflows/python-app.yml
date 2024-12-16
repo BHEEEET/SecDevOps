@@ -90,5 +90,5 @@ jobs:
         run: pip install trufflehog
 
       - name: Run Secrets scan
-        run: trufflehog git file://$PWD --json 
+        run: trufflehog git --json file://.
       
