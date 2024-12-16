@@ -37,6 +37,14 @@ jobs:
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           # Exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+  emgrep-scan:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Run Semgrep
+      uses: returntocorp/semgrep-action@v1
+      with:
+        config: 'p/python'  # Scan with Python rules
 
   analyze:
     name: Analyze (SAST)
