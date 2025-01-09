@@ -102,16 +102,14 @@ jobs:
       - name: Run safety check
         run: safety check
 
-secrets_scan:
-  runs-on: ubuntu-latest
-
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Secret Scanning
-      uses: trufflesecurity/trufflehog@main
-      with:
-        scan: repo
-        results: verified # Replace 'verified' with the appropriate value based on your needs
-
+  secrets_scan:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+  
+      - name: Secret Scanning
+        uses: trufflesecurity/trufflehog@main
+        with:
+          extra_args: --results=verified
