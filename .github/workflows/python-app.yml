@@ -113,4 +113,5 @@ secrets_scan:
       uses: trufflesecurity/trufflehog@main
       with:
         scan: repo
-        output: results.json
+        results: verified # Replace 'verified' with the appropriate value based on your needs
+
